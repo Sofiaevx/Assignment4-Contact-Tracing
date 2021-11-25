@@ -1,0 +1,10 @@
+C:\Users\Jv Cataquiz\OOP\wala\bin\Debug\wala.exe.config
+C:\Users\Jv Cataquiz\OOP\wala\bin\Debug\wala.exe
+C:\Users\Jv Cataquiz\OOP\wala\bin\Debug\wala.pdb
+C:\Users\Jv Cataquiz\OOP\wala\obj\Debug\wala.csproj.AssemblyReference.cache
+C:\Users\Jv Cataquiz\OOP\wala\obj\Debug\wala.Form1.resources
+C:\Users\Jv Cataquiz\OOP\wala\obj\Debug\wala.Properties.Resources.resources
+C:\Users\Jv Cataquiz\OOP\wala\obj\Debug\wala.csproj.GenerateResource.cache
+C:\Users\Jv Cataquiz\OOP\wala\obj\Debug\wala.csproj.CoreCompileInputs.cache
+C:\Users\Jv Cataquiz\OOP\wala\obj\Debug\wala.exe
+C:\Users\Jv Cataquiz\OOP\wala\obj\Debug\wala.pdb

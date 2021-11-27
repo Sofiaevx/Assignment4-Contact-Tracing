@@ -8,3 +8,13 @@ C:\Users\Jv Cataquiz\OOP\wala\obj\Debug\ContactTracing.csproj.GenerateResource.c
 C:\Users\Jv Cataquiz\OOP\wala\obj\Debug\ContactTracing.csproj.CoreCompileInputs.cache
 C:\Users\Jv Cataquiz\OOP\wala\obj\Debug\wala.exe
 C:\Users\Jv Cataquiz\OOP\wala\obj\Debug\wala.pdb
+C:\Users\Jv Cataquiz\OOP\Assignment4\Contact tracing\bin\Debug\wala.exe.config
+C:\Users\Jv Cataquiz\OOP\Assignment4\Contact tracing\bin\Debug\wala.exe
+C:\Users\Jv Cataquiz\OOP\Assignment4\Contact tracing\bin\Debug\wala.pdb
+C:\Users\Jv Cataquiz\OOP\Assignment4\Contact tracing\obj\Debug\ContactTracing.csproj.AssemblyReference.cache
+C:\Users\Jv Cataquiz\OOP\Assignment4\Contact tracing\obj\Debug\wala.Form1.resources
+C:\Users\Jv Cataquiz\OOP\Assignment4\Contact tracing\obj\Debug\wala.Properties.Resources.resources
+C:\Users\Jv Cataquiz\OOP\Assignment4\Contact tracing\obj\Debug\ContactTracing.csproj.GenerateResource.cache
+C:\Users\Jv Cataquiz\OOP\Assignment4\Contact tracing\obj\Debug\ContactTracing.csproj.CoreCompileInputs.cache
+C:\Users\Jv Cataquiz\OOP\Assignment4\Contact tracing\obj\Debug\wala.exe
+C:\Users\Jv Cataquiz\OOP\Assignment4\Contact tracing\obj\Debug\wala.pdb

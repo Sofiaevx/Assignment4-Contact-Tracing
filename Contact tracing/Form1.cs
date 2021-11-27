@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace wala
 {
@@ -17,37 +18,6 @@ namespace wala
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void vScrollBar1_Scroll(object sender, ScrollEventArgs e)
-        {
-
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-      
 
         private void checkBoxSame_Click(object sender, EventArgs e)
         {
@@ -75,29 +45,169 @@ namespace wala
             }
         }
 
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+       
+
+       
+
+        private void buttonsubmit_Click(object sender, EventArgs e)
+        {
+            StreamWriter Output;
+            string location = @"D:\This PC\Desktop\OutputFile\Contact_TracingOutput.txt";
+            Output = File.AppendText(location);
+            Output.WriteLine("\n*************************************************************\n");
+            Output.WriteLine("Date: " + dateTimePicker1.Value);
+            Output.WriteLine("Name: " + textBoxLn.Text + ", " + textBoxFn.Text + " " + textBoxMi.Text + ". " + textBoxSuffix.Text);
+            Output.WriteLine("Birthdate: " + bdatepicker.Value);
+            Output.WriteLine("Age: " + numericUpDownage.Value);
+            if (radioButtonMale.Checked)
+            {
+                Output.WriteLine("Gender: Male");
+            }
+            else
+            {
+                Output.WriteLine("Gender: Female");
+            }
+            Output.WriteLine("Phone Number: " + textBoxPn.Text);
+            Output.WriteLine("Email: " + textBoxEmail.Text);
+            Output.WriteLine("Present Address: " + textBoxPresAddress.Text + ", " + textBoxPresCity.Text + ", " + textBoxPresProv.Text + ", " + textBoxPresZip.Text);
+            if (checkBoxSame.Checked)
+            {
+                Output.WriteLine("Permanent Address: " + textBoxPresAddress.Text + ", " + textBoxPresCity.Text + ", " + textBoxPresProv.Text + ", " + textBoxPresZip.Text);
+            }
+            else
+            {
+                Output.WriteLine("Permanent Address: " + textBox1PerAddress.Text + ", " + textBoxCity.Text + ", " + textBoxProv.Text + ", " + textBoxZip.Text);
+
+            }
+
+            Output.WriteLine("\n 1. Do you feel any of the following?");
+            if (radioButton1no.Checked)
+            {
+                Output.WriteLine("\t" + labelcoughs.Text + ": No ");
+            }
+            else
+            {
+                Output.WriteLine("\t" + labelcoughs.Text + ": Yes ");
+            }
+            if (radioButton2no.Checked)
+            {
+                Output.WriteLine("\t" + labelchills.Text + ": No ");
+            }
+            else
+            {
+                Output.WriteLine("\t" + labelchills.Text + ": Yes ");
+            }
+            if (radioButton3no.Checked)
+            {
+                Output.WriteLine("\t" + labelsore.Text + ": No ");
+            }
+            else
+            {
+                Output.WriteLine("\t" + labelsore.Text + ": Yes ");
+            }
+            if (radioButton4no.Checked)
+            {
+                Output.WriteLine("\t" + labelshortness.Text + ": No ");
+            }
+            else
+            {
+                Output.WriteLine("\t" + labelshortness.Text + ": Yes ");
+            }
+            if (radioButton5no.Checked)
+            {
+                Output.WriteLine("\t" + labelrunny.Text + ": No ");
+            }
+            else
+            {
+                Output.WriteLine("\t" + labelrunny.Text + ": Yes ");
+            }
+            if (radioButton6no.Checked)
+            {
+                Output.WriteLine("\t" + labelheadache.Text + ": No ");
+            }
+            else
+            {
+                Output.WriteLine("\t" + labelheadache.Text + ": Yes ");
+            }
+            if (radioButton7no.Checked)
+            {
+                Output.WriteLine("\t" + labelfatigue.Text + ": No ");
+            }
+            else
+            {
+                Output.WriteLine("\t" + labelfatigue.Text + ": Yes ");
+            }
+            if (radioButton8no.Checked)
+            {
+                Output.WriteLine("\t" + labelloss.Text + ": No ");
+            }
+            else
+            {
+                Output.WriteLine("\t" + labelloss.Text + ": Yes ");
+            }
+            Output.Write("\n 2. Have you worked together or stayed together in the same closed environment of a confirmed Covid - 19 case?");
+            if (rbnum2no.Checked)
+            {
+                Output.Write(" - No ");
+            }
+            else
+            {
+                Output.Write(" - Yes ");
+            }
+            Output.Write("\n 3. Have you had any contact with anyone with fever, cough, colds,and sore throat the past 2 weeks ?");
+            if (rbnum3no.Checked)
+            {
+                Output.Write(" - No ");
+            }
+            else
+            {
+                Output.Write(" - Yes ");
+            }
+            Output.Write("\n 4. Have you travelled to any areas in NCR from your home?");
+            if (rbnum4no.Checked)
+            {
+                Output.Write(" - No ");
+            }
+            else
+            {
+                Output.Write(" - Yes ");
+            }
+            Output.Write("\n 5. Have you travelled outside the Philippines in the last 14 days?");
+            if (rbnum5no.Checked)
+            {
+                Output.Write(" - No ");
+            }
+            else
+            {
+                Output.Write(" - Yes ");
+            }
+
+
+
+            MessageBox.Show("Information Submitted");
+            Output.Close();
+        }
+
+        private void checkBoxSame_CheckedChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void radioButtonMale_CheckedChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void radioButton1yes_CheckedChanged(object sender, EventArgs e)
+        private void checkBox1_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void label13_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label11_Click(object sender, EventArgs e)
-        {
-
+            if (checkBox1.Checked)
+            {
+                buttonsubmit.Enabled = true;
+            }
+            else
+            {
+                buttonsubmit.Enabled = false;
+            }
         }
     }
     }

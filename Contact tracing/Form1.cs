@@ -52,9 +52,9 @@ namespace wala
         private void buttonsubmit_Click(object sender, EventArgs e)
         {
             StreamWriter Output;
-            string location = @"D:\This PC\Desktop\OutputFile\Contact_TracingOutput.txt";
+            string location = @"D:\This PC\Desktop\OutputFile\" + textBoxLn.Text + ", " + textBoxFn.Text + ".txt";
             Output = File.AppendText(location);
-            Output.WriteLine("\n*************************************************************\n");
+          
             Output.WriteLine("Date: " + dateTimePicker1.Value);
             Output.WriteLine("Name: " + textBoxLn.Text + ", " + textBoxFn.Text + " " + textBoxMi.Text + ". " + textBoxSuffix.Text);
             Output.WriteLine("Birthdate: " + bdatepicker.Value);
@@ -181,11 +181,15 @@ namespace wala
             {
                 Output.Write(" - Yes ");
             }
-
-
-
-            MessageBox.Show("Information Submitted");
             Output.Close();
+
+
+
+            MessageBox.Show( "Created Successfully!!" );
+            Form1 form1 = new Form1();
+            this.Hide();
+            form1.Show();
+
         }
 
         private void checkBoxSame_CheckedChanged(object sender, EventArgs e)
@@ -207,6 +211,22 @@ namespace wala
             else
             {
                 buttonsubmit.Enabled = false;
+            }
+        }
+
+        private void letters(object sender, KeyPressEventArgs e)
+        {
+            if ((!char.IsLetter(e.KeyChar)) && (!char.IsWhiteSpace(e.KeyChar)) && (!char.IsControl(e.KeyChar)))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void num(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
             }
         }
     }

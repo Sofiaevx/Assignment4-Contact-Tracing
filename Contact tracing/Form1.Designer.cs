@@ -43,6 +43,9 @@ namespace wala
             this.label10 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.panelgender = new System.Windows.Forms.Panel();
+            this.radioButton21 = new System.Windows.Forms.RadioButton();
+            this.radioButtonMale = new System.Windows.Forms.RadioButton();
             this.numericUpDownage = new System.Windows.Forms.NumericUpDown();
             this.bdatepicker = new System.Windows.Forms.DateTimePicker();
             this.buttonsubmit = new System.Windows.Forms.Button();
@@ -168,12 +171,10 @@ namespace wala
             this.textBoxLn = new System.Windows.Forms.TextBox();
             this.textBoxFn = new System.Windows.Forms.TextBox();
             this.FNlabel = new System.Windows.Forms.Label();
-            this.radioButtonMale = new System.Windows.Forms.RadioButton();
-            this.radioButton21 = new System.Windows.Forms.RadioButton();
-            this.panelgender = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.panelgender.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownage)).BeginInit();
             this.panel22.SuspendLayout();
             this.panel23.SuspendLayout();
@@ -199,7 +200,6 @@ namespace wala
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panelgender.SuspendLayout();
             this.SuspendLayout();
             // 
             // label6
@@ -411,6 +411,40 @@ namespace wala
             this.groupBox2.TabIndex = 15;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Contact Tracing Form";
+            // 
+            // panelgender
+            // 
+            this.panelgender.Controls.Add(this.radioButton21);
+            this.panelgender.Controls.Add(this.radioButtonMale);
+            this.panelgender.Location = new System.Drawing.Point(390, 168);
+            this.panelgender.Name = "panelgender";
+            this.panelgender.Size = new System.Drawing.Size(163, 31);
+            this.panelgender.TabIndex = 81;
+            // 
+            // radioButton21
+            // 
+            this.radioButton21.AutoSize = true;
+            this.radioButton21.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton21.Location = new System.Drawing.Point(83, 1);
+            this.radioButton21.Name = "radioButton21";
+            this.radioButton21.Size = new System.Drawing.Size(78, 25);
+            this.radioButton21.TabIndex = 1;
+            this.radioButton21.TabStop = true;
+            this.radioButton21.Text = "Female";
+            this.radioButton21.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonMale
+            // 
+            this.radioButtonMale.AutoSize = true;
+            this.radioButtonMale.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButtonMale.Location = new System.Drawing.Point(3, 1);
+            this.radioButtonMale.Name = "radioButtonMale";
+            this.radioButtonMale.Size = new System.Drawing.Size(62, 25);
+            this.radioButtonMale.TabIndex = 0;
+            this.radioButtonMale.TabStop = true;
+            this.radioButtonMale.Text = "Male";
+            this.radioButtonMale.UseVisualStyleBackColor = true;
+            this.radioButtonMale.CheckedChanged += new System.EventHandler(this.radioButtonMale_CheckedChanged);
             // 
             // numericUpDownage
             // 
@@ -1633,6 +1667,7 @@ namespace wala
             this.textBoxPn.Name = "textBoxPn";
             this.textBoxPn.Size = new System.Drawing.Size(212, 29);
             this.textBoxPn.TabIndex = 23;
+            this.textBoxPn.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.num);
             // 
             // Phonelabel
             // 
@@ -1671,6 +1706,7 @@ namespace wala
             this.textBoxSuffix.Name = "textBoxSuffix";
             this.textBoxSuffix.Size = new System.Drawing.Size(52, 29);
             this.textBoxSuffix.TabIndex = 4;
+            this.textBoxSuffix.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.letters);
             // 
             // textBoxMi
             // 
@@ -1679,6 +1715,7 @@ namespace wala
             this.textBoxMi.Name = "textBoxMi";
             this.textBoxMi.Size = new System.Drawing.Size(92, 29);
             this.textBoxMi.TabIndex = 3;
+            this.textBoxMi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.letters);
             // 
             // textBoxLn
             // 
@@ -1687,6 +1724,7 @@ namespace wala
             this.textBoxLn.Name = "textBoxLn";
             this.textBoxLn.Size = new System.Drawing.Size(213, 29);
             this.textBoxLn.TabIndex = 2;
+            this.textBoxLn.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.letters);
             // 
             // textBoxFn
             // 
@@ -1695,6 +1733,7 @@ namespace wala
             this.textBoxFn.Name = "textBoxFn";
             this.textBoxFn.Size = new System.Drawing.Size(212, 29);
             this.textBoxFn.TabIndex = 1;
+            this.textBoxFn.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.letters);
             // 
             // FNlabel
             // 
@@ -1706,47 +1745,13 @@ namespace wala
             this.FNlabel.TabIndex = 14;
             this.FNlabel.Text = "First Name";
             // 
-            // radioButtonMale
-            // 
-            this.radioButtonMale.AutoSize = true;
-            this.radioButtonMale.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButtonMale.Location = new System.Drawing.Point(3, 1);
-            this.radioButtonMale.Name = "radioButtonMale";
-            this.radioButtonMale.Size = new System.Drawing.Size(62, 25);
-            this.radioButtonMale.TabIndex = 0;
-            this.radioButtonMale.TabStop = true;
-            this.radioButtonMale.Text = "Male";
-            this.radioButtonMale.UseVisualStyleBackColor = true;
-            this.radioButtonMale.CheckedChanged += new System.EventHandler(this.radioButtonMale_CheckedChanged);
-            // 
-            // radioButton21
-            // 
-            this.radioButton21.AutoSize = true;
-            this.radioButton21.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton21.Location = new System.Drawing.Point(83, 1);
-            this.radioButton21.Name = "radioButton21";
-            this.radioButton21.Size = new System.Drawing.Size(78, 25);
-            this.radioButton21.TabIndex = 1;
-            this.radioButton21.TabStop = true;
-            this.radioButton21.Text = "Female";
-            this.radioButton21.UseVisualStyleBackColor = true;
-            // 
-            // panelgender
-            // 
-            this.panelgender.Controls.Add(this.radioButton21);
-            this.panelgender.Controls.Add(this.radioButtonMale);
-            this.panelgender.Location = new System.Drawing.Point(390, 168);
-            this.panelgender.Name = "panelgender";
-            this.panelgender.Size = new System.Drawing.Size(163, 31);
-            this.panelgender.TabIndex = 81;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(788, 567);
+            this.ClientSize = new System.Drawing.Size(822, 567);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.groupBox1);
@@ -1757,6 +1762,8 @@ namespace wala
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.panelgender.ResumeLayout(false);
+            this.panelgender.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownage)).EndInit();
             this.panel22.ResumeLayout(false);
             this.panel22.PerformLayout();
@@ -1806,8 +1813,6 @@ namespace wala
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panelgender.ResumeLayout(false);
-            this.panelgender.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
